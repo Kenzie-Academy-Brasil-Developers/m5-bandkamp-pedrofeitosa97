@@ -23,7 +23,10 @@ class AlbumViewTest(APITestCase):
         expected_pagination_keys = {"count", "next", "previous", "results"}
         msg = "Verifique se a paginação está sendo feita corretamente"
         with self.subTest():
-            self.assertSetEqual(expected_pagination_keys, resulted_pagination_keys)
+            self.assertSetEqual(
+                expected_pagination_keys,
+                resulted_pagination_keys
+            )
 
         results_len = len(resulted_data["results"])
         expected_len = 2
